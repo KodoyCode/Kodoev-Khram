@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Garry's Mod Loading Fix</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: system-ui, -apple-system, "Tahoma", sans-serif;
+            background: radial-gradient(circle, #0099ff 0%, #005588 100%);
+            color: white;
+        }
+
+        /* Исправленный логотип */
+        .gmod-logo {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            display: flex;
+            align-items: baseline; /* Выравнивание по нижней линии текста */
+            opacity: 0.95;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+        }
+
+        .main-word {
+            font-size: 90px;
+            font-weight: 900;
+        }
+
+        .sub-word {
+            font-size: 70px;
+            font-weight: 800;
+            margin-left: 5px;
+        }
+
+        /* Футер и прогресс */
+        .loading-footer {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+        }
+
+        .status-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+
+        #current-task {
+            font-size: 26px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        #percentage {
+            font-size: 56px;
+            font-weight: 900;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div class="gmod-logo">
+        <div class="main-word">Garry's</div>
+        <div class="sub-word">Mod</div>
+    </div>
+
+    <div class="loading-footer">
+        <div class="status-wrapper">
+            <div id="current-task"><span class="spinner"></span>Initializing...</div>
+            <div id="percentage">0%</div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="fill"></div>
+        </div>
+    </div>
+
+    <script>
+        const tasks = [
+            "Mounting 'Кодоев Храм' assets",
+            "Downloading missing textures (purple/black)",
+            "Optimizing for Celeron G1620...",
+            "Loading Мухосранск Map Data",
+            "Calculating Янчик's debt interest...",
+            "Validating CSS/HTML integrity",
+            "Simulating 20FPS experience",
+            "Waiting for Steam Workshop..."
+        ];
+
+        let progress = 0;
+        const taskText = document.getElementById('current-task');
+        const percText = document.getElementById('percentage');
+        const fill = document.getElementById('fill');
+
+        function update() {
+            if (progress < 100) {
+                progress += Math.floor(Math.random() * 3);
+                if (progress > 100) progress = 100;
+            }
+
+            if (Math.random() > 0.8) {
+                taskText.innerHTML = `<span class="spinner"></span>${tasks[Math.floor(Math.random() * tasks.length)]}`;
+            }
+
+            percText.innerText = progress + "%";
+            fill.style.width = progress + "%";
+            
+            setTimeout(update, 500 + Math.random() * 1500);
+        }
+        update();
+    </script>
+</body>
+</html>

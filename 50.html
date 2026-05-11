@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            font-family: sans-serif;
+        }
+
+        .main-card {
+            width: 220px;
+            padding: 40px 20px;
+            background-color: #262626;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .round-btn {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: none;
+            background: #ff4757;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: 0.3s;
+            padding: 10px;
+            outline: none;
+        }
+
+        .round-btn:hover {
+            background: #ff6b81;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-card">
+        <button class="round-btn" data-num="1" onclick="toggleText(this, 'First Button')">1</button>
+        <button class="round-btn" data-num="2" onclick="toggleText(this, 'Second Button')">2</button>
+        <button class="round-btn" data-num="3" onclick="toggleText(this, 'Third Button')">3</button>
+        <button class="round-btn" data-num="4" onclick="toggleText(this, 'Fourth Button')">4</button>
+    </div>
+
+    <script>
+        function toggleText(btn, msg) {
+            const originalNumber = btn.getAttribute('data-num');
+
+            if (btn.innerText === originalNumber) {
+                btn.innerText = msg;
+                btn.style.background = "#00d1b2";
+            } 
+            else {
+                btn.innerText = originalNumber;
+                btn.style.background = "#ff4757";
+            }
+        }
+    </script>
+
+</body>
+</html>
