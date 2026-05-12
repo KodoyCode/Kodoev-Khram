@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * 
+        { margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+        body 
+        { font-family: 'Segoe UI', Tahoma, sans-serif;
+        line-height: 1.6;
+        color: #333; 
+        background: #f4f4f4; 
+    }
+
+        header 
+        { background: #fff; 
+            padding: 20px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #ddd; 
+        }
+        .l h1 
+        { font-size: 24px; 
+            color: #444; 
+        }
+        nav a 
+        { margin-left: 20px; 
+            text-decoration: none; 
+            color: #555; font-weight: bold; font-size: 14px; }
+
+        .h 
+        { 
+            background: linear-gradient(rgba(0, 100, 120, 0.8), rgba(0, 80, 100, 0.8)), url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .h h2 
+        { font-size: 48px; 
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+            letter-spacing: 2px; 
+        }
+        .h p 
+        { font-size: 18px; 
+            margin-bottom: 25px; 
+        }
+        .btn 
+        { background: #00bcd4; 
+            color: white; 
+            padding: 12px 30px;
+            text-decoration: none; 
+            border-radius: 3px; font-weight: bold; 
+        }
+
+        .st 
+        { display: flex; 
+            justify-content: space-around; 
+            background: #fff; 
+            padding: 40px 10%; 
+            text-align: center; 
+        }
+        .st-it h3 
+        { color: #00bcd4; 
+            font-size: 32px; 
+        }
+        .st-it p 
+        { text-transform: uppercase; 
+            font-size: 12px; 
+            color: #777; 
+        }
+
+        .svc 
+        { padding: 60px 10%; 
+            text-align: center; 
+        }
+        .svc-tit 
+        { margin-bottom: 40px; 
+
+        }
+        .crd1 
+        { display: flex; 
+            gap: 20px; 
+            justify-content: center; 
+            flex-wrap: wrap; }
+        .crd 
+        { background: #fff; 
+            border: 1px solid #eee; 
+            padding: 20px; width: 300px; 
+            transition: 0.3s; 
+        }
+        .crd:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        }
+        .crd img { width: 100%; 
+            height: 150px; 
+            background: #eee; 
+            margin-bottom: 15px; 
+            border-radius: 5px; 
+        }
+        .crd h4 { margin-bottom: 10px; 
+        }
+        .crd .p { color: #00bcd4; 
+            font-weight: bold; 
+            margin: 15px 0; 
+            display: block; 
+        }
+        .btn-sml { background: #00bcd4; 
+            color: white; 
+            padding: 8px 20px; 
+            text-decoration: none; 
+            font-size: 13px; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="l">
+            <h1>Название компании</h1>
+            <small>Вид деятельности</small>
+        </div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Услуги</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <section class="h">
+        <h2>Интернет-решения</h2>
+        <p>Создание сайтов и полная поддержка</p>
+        <a href="#" class="btn">ПОДРОБНОСТИ</a>
+    </section>
+
+    <section class="st">
+        <div class="st-it">
+            <h3>3544+</h3>
+            <p>довольных клиентов</p>
+        </div>
+        <div class="st-it">
+            <h3>2200+</h3>
+            <p>выполненных работ</p>
+        </div>
+        <div class="st-it">
+            <h3>365+</h3>
+            <p>дней работы в год</p>
+        </div>
+    </section>
+
+    <section class="svc">
+        <div class="svc-tit">
+            <h2>Мы предлагаем</h2>
+            <p>Съешь еще этих мягких французских булок</p>
+        </div>
+        <div class="crd1">
+            <div class="crd">
+                <img src="via.placeholder.com" alt="Услуга 1">
+                <h4>Наименование 1</h4>
+                <p>Краткое описание мега-услуги.</p>
+                <span class="p">30 000 руб.</span>
+                <a href="#" class="btn-sml">Подробности</a>
+            </div>
+            <div class="crd">
+                <img src="via.placeholder.com" alt="Услуга 2">
+                <h4>Наименование 2</h4>
+                <p>Тут описание еще какого-нибудь кодинга.</p>
+                <span class="p">30 000 руб.</span>
+                <a href="#" class="btn-small">Подробности</a>
+            </div>
+            <div class="crd">
+                <img src="via.placeholder.com" alt="Услуга 3">
+                <h4>Наименование 3</h4>
+                <p>И финальный штрих по верстке.</p>
+                <span class="p">30 000 руб.</span>
+                <a href="#" class="btn-sml">Подробности</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
