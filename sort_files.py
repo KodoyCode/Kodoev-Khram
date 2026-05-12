@@ -3,15 +3,16 @@ import shutil
 
 # Укажи путь к папке, где вечный срач (например, твои Загрузки)
 # В Windows пути пишутся либо через /, либо с буквой r перед кавычками
-source_dir = r'C:/Users/user/Downloads'
+source_dir = r'C:\Users\user\Desktop\SaiytovAydos-Files'
 
 # Словарь: ключ - имя папки, значение - список расширений
 folders = {
     'Images': ['.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', '.jfif'],
-    'Documents': ['.pdf', '.docx', '.txt', '.xlsx', '.pptx'],
-    'Code': ['.html', '.css', '.py', '.xml', '.js', '.json'],
-    'Soft': ['.exe', '.msi', '.iso'],
-    'Archives': ['.zip', '.rar', '.7z', '.gz', '.bz2'],
+    'HTML': ['.html'],
+    'CSS': ['.css'],
+    'PYTHON': ['.py'],
+    'JAVA': ['.js', '.json'],
+    'XML': ['.xml'],
     'Video': ['.mp4', '.mkv', '.mov'],
     'Audio': ['.mp3', '.flac', '.wav'],
 }

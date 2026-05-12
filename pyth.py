@@ -1,8 +1,0 @@
-a = int(input("Введите перове число: "))
-b = int(input("Введите второе число: "))
-print(a+b)
-print(a-b)
-print(a*b)
-print(a/b)
-print(a**b)
-print(a//b)
