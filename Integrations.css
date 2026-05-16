@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.logo {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    color: red;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: yellow;
+}
+
+.card {
+    width: 320px;
+    background: white;
+    margin: 50px auto;
+    padding: 15px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.card .main-img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    margin-top: 15px;
+}
+
+.card p {
+    margin-top: 10px;
+}
+
+#toggle-trigger {
+    display: none;
+}
+
+.hidden-content {
+    display: none;
+}
+
+#toggle-trigger:checked~.main-img {
+    display: none;
+}
+
+#toggle-trigger:checked~.hidden-content {
+    display: block;
+}
+
+.css-button {
+    display: block;
+    margin: 15px auto 0;
+    background: blue;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.css-button:hover {
+    background: red;
+}
+
+.mini-photos-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.small-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+.hidden-content p {
+    font-size: 13px;
+    color: #444;
+    text-align: left;
+    line-height: 1.4;
+}
