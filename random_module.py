@@ -58,7 +58,7 @@ print(random.uniform(1,10))
 '''
 
 
-#choice
+#choices
 '''
 miyweler =['alma','anar','juzim','banan']
 
