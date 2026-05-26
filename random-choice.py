@@ -21,5 +21,6 @@ while True:
         print("*")
     if e == b and f == c and g == d:
         print("Siz hamme sanlardi taldiniz!")
+        break
     else:
         print("* bolip turgan sanlardi talin!")
