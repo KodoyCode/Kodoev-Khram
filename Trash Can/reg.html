@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      background: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+    }
+    .btn{
+        background-color: green;
+    }
+    input, select {
+      display: block;
+      width: 250px;
+      margin: 8px 0;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Registrdan otiw</h1>
+
+  <form>
+    <input type="text" placeholder="Full name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+
+    <select required>
+      <option value="" disabled selected>Select country</option>
+      <option>United States</option>
+      <option>United Kingdom</option>
+      <option>Russia</option>
+      <option>Germany</option>
+      <option>Kazakhstan</option>
+      <option>Uzbekistan</option>
+      <option>China</option>
+      <option>Animal Farm</option>
+    </select>
+
+    <select required>
+      <option value="" disabled selected>Select region</option>
+      <option>Tashkent</option>
+      <option>Samarkand</option>
+      <option>Karakalpakstan</option>
+      <option>Texas</option>
+    </select>
+
+    <select required>
+      <option value="" disabled selected>Select city</option>
+      <option>Nukus</option>
+      <option>Chimbay</option>
+      <option>Chelyabinsk</option>
+    </select>
+
+    <input type="tel" placeholder="Phone number">
+
+    <button type="submit" class="btn">Register</button>
+  </form>
+
+</body>
+</html>

@@ -1,169 +1,169 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Экзистенциальное сообщение Орка-Раба"</title>
-    <style>
-        /* База и Центровка */
-        body {
-            background: #111;
-            color: #dcdcdc;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Центрирует контейнер по горизонтали */
-            min-height: 100vh;
-            line-height: 1.8;
-            overflow-y: auto; /* Разрешаем скролл в бездну */
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Экзистенциальное сообщение Орка-Раба"</title>
+    <style>
+       /* База и Центровка */
+        body {
+            background: #111;
+            color: #dcdcdc;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирует контейнер по горизонтали */
+            min-height: 100vh;
+            line-height: 1.8;
+            overflow-y: auto; /* Разрешаем скролл в бездну */
+         }
 
-        /* Контейнер-мавзолей */
-        .container {
-            position: relative; /* Чтобы привязать .the-end к низу */
-            width: 90%;
-            max-width: 650px;
-            margin: 60px 0; /* Отступы сверху и снизу */
-            background: rgba(20, 20, 20, 0.95);
-            padding: 50px;
-            border: 1px solid #333;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-            box-sizing: border-box;
-            text-align: center;
-            
-            /* ГИГАНТСКАЯ ПУСТОТА (8 высот экрана) */
-            padding-bottom: 800vh; 
+        /* Контейнер-мавзолей */
+        .container {
+            position: relative; /* Чтобы привязать .the-end к низу */
+            width: 90%;
+            max-width: 650px;
+            margin: 60px 0; /* Отступы сверху и снизу */
+            background: rgba(20, 20, 20, 0.95);
+            padding: 50px;
+            border: 1px solid #333;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            text-align: center;
+        
+            /* ГИГАНТСКАЯ ПУСТОТА (8 высот экрана) */
+            padding-bottom: 800vh; 
+            
+            /* Появление при загрузке */
+            animation: fadeInTlen 4s ease-out forwards;
+        }
 
-            /* Появление при загрузке */
-            animation: fadeInTlen 4s ease-out forwards;
-        }
+        /* Важные слова */
+        strong {
+            color: #ff4500;
+            font-style: italic;
+            font-weight: bold;
+        }
 
-        /* Важные слова */
-        strong {
-            color: #ff4500;
-            font-style: italic;
-            font-weight: bold;
-        }
+        /* Тряска на слове РАБОТАЙ */
+        .shake-text {
+            color: red;
+            display: inline-block;
+            cursor: none; /* Убираем курсор для паники */
+            font-weight: 900;
+            text-transform: uppercase;
+        }
 
-        /* Тряска на слове РАБОТАЙ */
-        .shake-text {
-            color: red;
-            display: inline-block;
-            cursor: none; /* Убираем курсор для паники */
-            font-weight: 900;
-            text-transform: uppercase;
-        }
+        .shake-text:hover {
+            animation: rageShake 0.15s infinite;
+            text-shadow: 0 0 15px #ff0000;
+        }
 
-        .shake-text:hover {
-            animation: rageShake 0.15s infinite;
-            text-shadow: 0 0 15px #ff0000;
-        }
+        /* Уменьшенный Low Poly Орк */
+        img {
+            max-width: 280px; /* Сделали поменьше, как просил */
+            height: auto;
+            border: 2px solid #222;
+            margin: 40px auto;
+            display: block;
+            filter: grayscale(100%) contrast(1.1);
+            transition: transform 0.3s ease, filter 0.5s ease;
+        }
 
-        /* Уменьшенный Low Poly Орк */
-        img {
-            max-width: 280px; /* Сделали поменьше, как просил */
-            height: auto;
-            border: 2px solid #222;
-            margin: 40px auto;
-            display: block;
-            filter: grayscale(100%) contrast(1.1);
-            transition: transform 0.3s ease, filter 0.5s ease;
-        }
+        img:hover {
+            filter: none;
+            transform: scale(1.05);
+        }
 
-        img:hover {
-            filter: none;
-            transform: scale(1.05);
-        }
+        /* Текст в самой-самой бездне */
+        .the-end {
+            position: absolute;
+            bottom: 100px; /* Прижимаем к самому концу паддинга */
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #222; /* Почти невидимый в темноте */
+            font-size: 0.9em;
+            font-style: italic;
+            padding: 0 20px;
+            transition: color 2s ease, opacity 2s ease;
+            opacity: 0.3;
+        }
 
-        /* Текст в самой-самой бездне */
-        .the-end {
-            position: absolute;
-            bottom: 100px; /* Прижимаем к самому концу паддинга */
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: #222; /* Почти невидимый в темноте */
-            font-size: 0.9em;
-            font-style: italic;
-            padding: 0 20px;
-            transition: color 2s ease, opacity 2s ease;
-            opacity: 0.3;
-        }
+        /* Проявляется, если юзер реально доскроллил и навел мышь */
+        .the-end:hover {
+            color: #555;
+            opacity: 1;
+        }
 
-        /* Проявляется, если юзер реально доскроллил и навел мышь */
-        .the-end:hover {
-            color: #555;
-            opacity: 1;
-        }
+        /* Текст за пределами контейнера в самом низу страницы */
+        body::after {
+            content: "Выхода нет. Только код.";
+            display: block;
+            text-align: center;
+            padding: 100px 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+        }
 
-        /* Текст за пределами контейнера в самом низу страницы */
-        body::after {
-            content: "Выхода нет. Только код.";
-            display: block;
-            text-align: center;
-            padding: 100px 0;
-            font-size: 11px;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            letter-spacing: 12px;
-        }
+        /* АНИМАЦИИ */
+        @keyframes rageShake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
 
-        /* АНИМАЦИИ */
-        @keyframes rageShake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
-
-        @keyframes fadeInTlen {
-            0% { opacity: 0; transform: scale(0.98) translateY(20px); filter: blur(10px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-        }
-    </style>
+        @keyframes fadeInTlen {
+            0% { opacity: 0; transform: scale(0.98) translateY(20px); filter: blur(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+    </style>
 </head>
 <body>
-    
-    <div class="container">
-        <p>
-            И никакие возвышенно абстрактные или пошло материальные
-            вещи не придадут нашей даже не проклятой, но пустой экзистенции
-            хоть какую-то толику сущностного, настоящего, вечного; время 
-            не оставит и следа ни от чего, и сколького бы мы не добились
-            что бы не создали, будто в масштабах отдельной личности, целой
-            цивилизации, или всей популяции разумных существ, в конце нас ждёт одно
-            - небытие и забвение; любые вещи превратятся в хлам
-            , никто не вспомнит, кто построил <strong>Кодоев храм</strong>.
-        </p>
 
-        <p>
-            Да и самого <strong>Кодоя</strong>
-            тоже никто не вспомнит, так что <span class="shake-text">РАБОТАЙ</span>,
-            не работай, получай за это <strong>пизды</strong>, не получай, всё едино — <strong>тщета</strong>.
-        </p>
-        
-        <img src="https://img-webcalypt.ru/img/thumb/lg/images/meme-templates/x8H0acyAxe2CxvI7ut2bRMbmpJiwtPXu.jpg.jpg" alt="Орк-рабочий страдает">
+    <div class="container">
+        <p>
+             И никакие возвышенно абстрактные или пошло материальные
+             вещи не придадут нашей даже не проклятой, но пустой экзистенции
+             хоть какую-то толику сущностного, настоящего, вечного; время 
+             не оставит и следа ни от чего, и сколького бы мы не добились
+             что бы не создали, будто в масштабах отдельной личности, целой
+             цивилизации, или всей популяции разумных существ, в конце нас ждёт одно
+             - небытие и забвение; любые вещи превратятся в хлам
+             , никто не вспомнит, кто построил <strong>Кодоев храм</strong>.
+        </p>
 
-        <div class="the-end">
-            <p>Ты всё-таки дошёл до конца?</p>
-            <p><strong>СМЫСЛА НЕТ. ИДИ РАБОТАЙ.</strong></p>
-            <p style="font-size: 10px; margin-top: 30px; letter-spacing: 2px;">© КОДОЕВ ХРАМ. ВСЕ ПРАВА ПОГРЕБЕНЫ.</p>
-        </div>
-    </div>
+        <p>
+            Да и самого <strong>Кодоя</strong>
+            тоже никто не вспомнит, так что <span class="shake-text">РАБОТАЙ</span>,
+            не работай, получай за это <strong>пизды</strong>, не получай, всё едино — <strong>тщета</strong>.
+        </p>
 
-    <script>
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                document.title = "Э, КУДА?! РАБОТАЙ!";
-            } else {
-                document.title = "Тщета и Орки";
-            }
-        });
-    </script>
+        <img src="" alt="Орк-рабочий страдает">
+
+        <div class="the-end">
+            <p>Ты всё-таки дошёл до конца?</p>
+            <p><strong>СМЫСЛА НЕТ. ИДИ РАБОТАЙ.</strong></p>
+            <p style="font-size: 10px; margin-top: 30px; letter-spacing: 2px;">© КОДОЕВ ХРАМ. ВСЕ ПРАВА ПОГРЕБЕНЫ.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = "Э, КУДА?! РАБОТАЙ!";
+            } else {
+                document.title = "Тщета и Орки";
+            }
+        });
+    </script>
 
 </body>
 </html>            <p style="font-size: 10px; margin-top: 30px; letter-spacing: 2px;">© КОДОЕВ ХРАМ. ВСЕ ПРАВА ПОГРЕБЕНЫ.</p>

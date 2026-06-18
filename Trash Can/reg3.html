@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="kaa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qaydǵa túsiriw</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px;
+            background: #ececec;
+            color: #222;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 360px;
+            margin: 0;
+            padding: 32px 24px;
+            background: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin: 0 0 24px;
+            font-weight: normal;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            background: #fff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: none;
+            background: #27ae60;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <h1>Qaydǵa túsiriw</h1>
+
+        <label>
+            <span>Tolıq atıńız</span>
+            <input type="text" name="fullName" placeholder="At hám familıya" required>
+        </label>
+
+        <label>
+            <span>Email mánzilińiz</span>
+            <input type="email" name="email" placeholder="example@email.com" required>
+        </label>
+
+        <label>
+            <span>Rayon</span>
+            <select id="region" name="region" required>
+                <option value="" disabled selected>Rayondı tańlań</option>
+                <option value="nokis">Nókis qalası</option>
+                <option value="amudarya">Ámıdárya</option>
+                <option value="beruniy">Berúniy</option>
+                <option value="shimbay">Shımbay</option>
+                <option value="ellikqala">Ellikqala</option>
+                <option value="kegeyli">Kegeyli</option>
+                <option value="konlirat">Qonlırat</option>
+                <option value="karaozek">Qaraózek</option>
+                <option value="xojeli">Xojeli</option>
+                <option value="konlikol">Qonlıkól</option>
+                <option value="mangit">Mańgıt</option>
+                <option value="muynaq">Muynaq</option>
+                <option value="taqiyatas">Taqıyatas</option>
+                <option value="turtqul">Túrtkúl</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Qala</span>
+            <select id="city" name="city" required disabled>
+                <option value="" disabled selected>Álǵash rayondı tańlań</option>
+            </select>
+        </label>
+
+        <label>
+            <span>Jańa parol</span>
+            <input type="password" name="password" placeholder="Parol" minlength="8" required>
+        </label>
+
+        <button type="submit">Akkaunt jaratıw</button>
+    </form>
+
+    <script>
+        const cities = {
+            nokis: ['Nókis', 'Biruniy máhállesi', 'Doslıq máhállesi'],
+            amudarya: ['Mangit', 'Xojeli', 'Burınbay'],
+            beruniy: ['Berúniy', 'Qozılayıq', 'Qıpshaq'],
+            shimbay: ['Shımbay', 'Qanlıkól', 'Qıpshaq'],
+            ellikqala: ['Boǵaz', 'Qaraózek', 'Ellikqala'],
+            kegeyli: ['Kegeyli', 'Sarıbay', 'Qongırat'],
+            konlirat: ['Qonlırat', 'Jaslıq', 'Sarıbay'],
+            karaozek: ['Qaraózek', 'Qıpshaq', 'Qongırat'],
+            xojeli: ['Xojeli', 'Mangit', 'Burınbay'],
+            konlikol: ['Qonlıkól', 'Shımbay', 'Qıpshaq'],
+            mangit: ['Mańgıt', 'Xojeli', 'Burınbay'],
+            muynaq: ['Muynaq', 'Qongırat', 'Qaraqalpaq'],
+            taqiyatas: ['Taqıyatas', 'Qongırat', 'Qıpshaq'],
+            turtqul: ['Túrtkúl', 'Qongırat', 'Sarıbay']
+        };
+
+        const regionSelect = document.getElementById('region');
+        const citySelect = document.getElementById('city');
+
+        regionSelect.addEventListener('change', function () {
+            const region = this.value;
+            citySelect.innerHTML = '<option value="" disabled selected>Qalani tańlań</option>';
+
+            if (region && cities[region]) {
+                cities[region].forEach(function (city) {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+                citySelect.disabled = false;
+            } else {
+                citySelect.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>
