@@ -1,4 +1,4 @@
-a = int(input())
+a = int(input("San kirit"))
 if a==5:
     print("Son 5 ga teng")
 else:
