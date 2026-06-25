@@ -55,7 +55,7 @@ for i in range(1, questions + 1):
 
 
 if score == questions:
-    print("I can't believe it, you're incredible! YOU WIN THE GAME!")
+    print("YOU WIN THE GAME!")
     prize = random.choice(["quarter", "chocolate", "BSODA"])
     if prize == 'quarter':
         print("Here's your prize! A shining quarter!")
