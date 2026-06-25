@@ -1,4 +1,4 @@
-x=int(input())
+x=int(input("San kirit"))
 if x>0:
     print("Musbat")
 elif x==0:
