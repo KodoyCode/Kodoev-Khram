@@ -1,18 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Legend of Osas</title>
     <style>
-        body{
-            font-family: cursive;
+        body {
+            /* Оставил твой любимый cursive, гулять так гулять! */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #1e1e24;
+            color: #fff;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Нормальный заголовок — короткий и по делу */
+        h1 {
+            color: #ffcc00;
+            text-align: center;
+            font-size: 32px;
+            text-transform: uppercase;
+            border-bottom: 2px dashed #ffcc00;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Перенесли простыни текста в нормальные параграфы */
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            background: #2b2b36;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Выделяем Осаса, чтобы хакеры боялись */
+        .osas-core {
+            color: #00ff66;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff66;
+            transition: all 0.3s ease;
+        }
+
+        .osas-core:hover {
+            color: #ff0055;
+            text-shadow: 0 0 15px #ff0055;
+            letter-spacing: 1px;
+        }
+
+        .crutch-warning {
+            color: #ff3333;
+            font-style: italic;
+            font-weight: bold;
+            background: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis earum temporibus, voluptate cupiditate illum delectus harum sint quisquam molestias quidem possimus itaque impedit? Dolores deserunt provident, deleniti distinctio dolorum explicabo.</h1>
-    <br>
-    <h1>Uvuvwevwevwe Onyetenyevwe Ugwemubwem Osas. Uvuvwevwevwe onyetenyevwe ugwemubwem osas sit amet, consectetur adipiscing elit. Uvuvwevwevwe onyetenyevwe ugwemubwem osas do eiusmod tempor incididunt ut labore et dolore magna aliqua. Uvuvwevwevwe onyetenyevwe ugwemubwem osas, куды ж ты прёшь в мой CSS-код, тут и так всё держится на честном слове и костылях! Uvuvwevwevwe onyetenyevwe ugwemubwem osas ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
+
+    <h1>The Secret of Code Temple</h1>
+
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis earum temporibus, voluptate cupiditate illum delectus harum sint quisquam molestias quidem possimus itaque impedit? Dolores deserunt provident, deleniti distinctio dolorum explicabo.
+    </p>
+    
+    <p>
+        <span class="osas-core">Uvuvwevwevwe Onyetenyevwe Ugwemubwem Osas</span>. Uvuvwevwevwe onyetenyevwe ugwemubwem osas sit amet, consectetur adipiscing elit. Uvuvwevwevwe onyetenyevwe ugwemubwem osas do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        
+        Uvuvwevwevwe onyetenyevwe ugwemubwem osas, <span class="crutch-warning">куды ж ты прёшь в мой CSS-код, тут и так всё держится на честном слове и костылях!</span> 
+        
+        Uvuvwevwevwe onyetenyevwe ugwemubwem osas ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
 </body>
 </html>

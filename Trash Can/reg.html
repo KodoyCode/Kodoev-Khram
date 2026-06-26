@@ -1,35 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Govno</title>
   <style>
     body {
-      background: white;
+      background: #0f1115; /* Глубокий тёмный */
+      color: #e2e8f0;
       text-align: center;
-      font-family: Arial, sans-serif;
-      padding: 40px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 40px 20px;
     }
+    
+    h1 {
+      color: #00ff66; /* Неоновый зелёный */
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
     form {
       display: inline-block;
       text-align: left;
+      background: #181c24;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 1px solid #2d3748;
     }
-    .btn{
-        background-color: green;
-    }
+
     input, select {
       display: block;
-      width: 250px;
-      margin: 8px 0;
-      padding: 8px;
+      width: 280px;
+      margin: 12px 0;
+      padding: 10px 12px;
+      background: #101216;
+      border: 1px solid #4a5568;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    /* Подсветка при клике */
+    input:focus, select:focus {
+      border-color: #00ff66;
+    }
+
+    /* Стилизуем выпадающий список, чтобы не был белым */
+    select option {
+      background: #181c24;
+      color: #fff;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #00ff66;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover {
+      background-color: #00cc52;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 <body>
 
-  <h1>Registrdan otiw</h1>
+  <h1>Registrdan o'tish</h1>
 
-  <form>
+  <form onsubmit="alert('Вы успешно зарегистрированы в Скотном Дворе!'); return false;">
     <input type="text" placeholder="Full name" required>
     <input type="email" placeholder="Email" required>
     <input type="password" placeholder="Password" required>
@@ -61,7 +118,7 @@
       <option>Chelyabinsk</option>
     </select>
 
-    <input type="tel" placeholder="Phone number">
+    <input type="tel" placeholder="Phone number (+998...)">
 
     <button type="submit" class="btn">Register</button>
   </form>

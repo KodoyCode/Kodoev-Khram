@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Кодоев Храм: Vision AI Client</title>
+    <style>
+        body {
+            background: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Раздали коробку вширь, теперь дышится свободнее */
+        .chat-container {
+            width: 100%;
+            max-width: 1050px;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #00bcd4;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            text-align: center;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .chat-messages {
+            max-height: 600px; /* Немного приподнял высоту чата под широкую коробку */
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-messages::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 3px;
+        }
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #00bcd4;
+        }
+
+        .message-block {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 6px;
+            line-height: 1.6;
+        }
+
+        .message-block.user {
+            background: #2a2a2a;
+            border-left: 4px solid #00bcd4;
+        }
+
+        .message-block.bot {
+            background: #232323;
+            border-left: 4px solid #4caf50;
+            white-space: pre-wrap; 
+        }
+
+        /* Прижали пустоту снизу от имени к тексту */
+        .message-header {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px; 
+            font-weight: bold;
+        }
+
+        .message-block.user .message-header {
+            color: #00bcd4;
+        }
+
+        .message-block.bot .message-header {
+            color: #4caf50;
+        }
+
+        .message-text {
+            font-size: 0.95rem;
+            word-wrap: break-word;
+        }
+
+        /* Убрали лишний отступ у картинок Ghosts, чтобы они аккуратно сидели в блоке */
+        .chat-img {
+            max-width: 300px; /* Сделал превьюшки чуть больше под широкий экран */
+            max-height: 300px;
+            display: block;
+            margin-top: 4px;
+            margin-bottom: 6px;
+            border-radius: 6px;
+            border: 1px solid #444;
+        }
+
+        /* Форма отправки */
+        form {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 14px;
+            background: #2d2d2d;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: #00bcd4;
+        }
+
+        /* Кастомная кнопка для загрузки файла */
+        .file-input-label {
+            padding: 12px 15px;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .file-input-label:hover {
+            background: #3d3d3d;
+            border-color: #00bcd4;
+        }
+
+        button {
+            padding: 14px 28px;
+            background: #00bcd4;
+            border: none;
+            border-radius: 6px;
+            color: #121212;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #0097a7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>КОДОЕВ ХРАМ: VISION AI CLIENT</h2>
+    
+    <div class="chat-messages">
+        {% for msg in history %}
+            <div class="message-block {{ msg.role }}">
+                <div class="message-header">
+                    {% if msg.role == 'user' %}Ты{% else %}Gemini Киборг{% endif %}
+                </div>
+                <div class="message-text">
+                    {% if msg.image %}
+                        <img src="{{ msg.image }}" class="chat-img" alt="Загруженное изображение">
+                    {% endif %}
+                    {% if msg.text %}{{ msg.text }}{% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form action="/send_message" method="POST" enctype="multipart/form-data">
+        <label class="file-input-label" title="Прикрепить изображение">
+            📷
+            <input type="file" name="image" accept="image/*" style="display: none;">
+        </label>
+        <input type="text" name="user_input" placeholder="Напиши сообщение или загрузи фото..." autofocus autocomplete="off">
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+</body>
+</html>
