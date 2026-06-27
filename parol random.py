@@ -16,7 +16,7 @@ input,append,extend,sort while...
 '''
 import random
 
-# Буквы (arip)
+
 a = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
@@ -39,7 +39,7 @@ vse.extend(c)
 
 vse.sort()
 
-print("--- OTP Generator Baslandi ---")
+print("generator")
 
 while True:
     spisok = []
