@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]
+@="Open Terminal Here"
+"Icon"="cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\command]
+@="cmd.exe /k cd /d \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\OpenCMDHere]
+@="Open Terminal Here"
+"Icon"="cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\OpenCMDHere\command]
+@="cmd.exe /k cd /d \"%1\""

@@ -3,125 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qaydǵa túsiriw</title>
+    <title>Yep, another registration govno, again.</title>
     <style>
+        /* Все стили теперь работают вместе, без войн */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f1115; /* Перекатился на элитную темную тему */
+            color: #e2e8f0;
             min-height: 100vh;
-            padding: 20px;
-            background: #ececec;
-            color: #222;
-            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
 
-        form {
+        .form-container {
+            background-color: #181c24;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            max-width: 450px;
             width: 100%;
-            max-width: 360px;
-            margin: 0;
-            padding: 32px 24px;
-            background: #fff;
-            border: 1px solid #ddd;
-            text-align: center;
+            border: 1px solid #2d3748;
         }
 
         h1 {
-            font-size: 1.5rem;
-            margin: 0 0 24px;
-            font-weight: normal;
+            font-size: 1.8rem;
+            color: #00ff66; /* Фирменный зеленый KodoyCode */
+            margin-bottom: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 16px;
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
         }
 
-        span {
+        .form-group span {
             display: block;
-            margin-bottom: 6px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #94a3b8;
             font-size: 0.9rem;
         }
 
-        input,
-        select {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-            background: #fff;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            border: none;
-            background: #27ae60;
+            padding: 12px;
+            background: #101216;
+            border: 1px solid #4a5568;
+            border-radius: 6px;
             color: #fff;
             font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #00ff66;
+            box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+        }
+
+        select option {
+            background: #181c24;
+            color: #fff;
+        }
+
+        /* Если элемент disabled, он будет слегка прозрачным */
+        select:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        button[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            text-transform: uppercase;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2ecc71;
+        }
+
+        button[type="submit"]:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
 <body>
-    <form action="#" method="post">
+
+    <div class="form-container">
         <h1>Qaydǵa túsiriw</h1>
 
-        <label>
-            <span>Tolıq atıńız</span>
-            <input type="text" name="fullName" placeholder="At hám familıya" required>
-        </label>
+        <form action="#" method="post" onsubmit="alert('Данные улетели на сервера Протона!'); return false;">
+            <div class="form-group">
+                <span>Tolıq atıńız</span>
+                <input type="text" name="fullName" placeholder="At hám familıya" required>
+            </div>
 
-        <label>
-            <span>Email mánzilińiz</span>
-            <input type="email" name="email" placeholder="example@email.com" required>
-        </label>
+            <div class="form-group">
+                <span>Email mánzilińiz</span>
+                <input type="email" name="email" placeholder="example@email.com" required>
+            </div>
 
-        <label>
-            <span>Rayon</span>
-            <select id="region" name="region" required>
-                <option value="" disabled selected>Rayondı tańlań</option>
-                <option value="nokis">Nókis qalası</option>
-                <option value="amudarya">Ámıdárya</option>
-                <option value="beruniy">Berúniy</option>
-                <option value="shimbay">Shımbay</option>
-                <option value="ellikqala">Ellikqala</option>
-                <option value="kegeyli">Kegeyli</option>
-                <option value="konlirat">Qonlırat</option>
-                <option value="karaozek">Qaraózek</option>
-                <option value="xojeli">Xojeli</option>
-                <option value="konlikol">Qonlıkól</option>
-                <option value="mangit">Mańgıt</option>
-                <option value="muynaq">Muynaq</option>
-                <option value="taqiyatas">Taqıyatas</option>
-                <option value="turtqul">Túrtkúl</option>
-            </select>
-        </label>
+            <div class="form-group">
+                <span>Rayon</span>
+                <select id="region" name="region" required>
+                    <option value="" disabled selected hidden>Rayondı tańlań</option>
+                    <option value="nokis">Nókis qalası</option>
+                    <option value="amudarya">Ámıdárya</option>
+                    <option value="beruniy">Berúniy</option>
+                    <option value="shimbay">Shımbay</option>
+                    <option value="ellikqala">Ellikqala</option>
+                    <option value="kegeyli">Kegeyli</option>
+                    <option value="konlirat">Qonlırat</option>
+                    <option value="karaozek">Qaraózek</option>
+                    <option value="xojeli">Xojeli</option>
+                    <option value="konlikol">Qonlıkól</option>
+                    <option value="mangit">Mańgıt</option>
+                    <option value="muynaq">Muynaq</option>
+                    <option value="taqiyatas">Taqıyatas</option>
+                    <option value="turtqul">Túrtkúl</option>
+                </select>
+            </div>
 
-        <label>
-            <span>Qala</span>
-            <select id="city" name="city" required disabled>
-                <option value="" disabled selected>Álǵash rayondı tańlań</option>
-            </select>
-        </label>
+            <div class="form-group">
+                <span>Qala / Máhálle</span>
+                <select id="city" name="city" required disabled>
+                    <option value="" disabled selected hidden>Álǵash rayondı tańlań</option>
+                </select>
+            </div>
 
-        <label>
-            <span>Jańa parol</span>
-            <input type="password" name="password" placeholder="Parol" minlength="8" required>
-        </label>
+            <div class="form-group">
+                <span>Jańa parol</span>
+                <input type="password" name="password" placeholder="Parol" minlength="8" required>
+            </div>
 
-        <button type="submit">Akkaunt jaratıw</button>
-    </form>
+            <button type="submit">Akkaunt jaratıw</button>
+        </form>
+    </div>
 
     <script>
+        // Твой JS-скрипт — идеален, оставляем без изменений
         const cities = {
             nokis: ['Nókis', 'Biruniy máhállesi', 'Doslıq máhállesi'],
             amudarya: ['Mangit', 'Xojeli', 'Burınbay'],
@@ -144,7 +186,7 @@
 
         regionSelect.addEventListener('change', function () {
             const region = this.value;
-            citySelect.innerHTML = '<option value="" disabled selected>Qalani tańlań</option>';
+            citySelect.innerHTML = '<option value="" disabled selected hidden>Qalani tańlań</option>';
 
             if (region && cities[region]) {
                 cities[region].forEach(function (city) {
