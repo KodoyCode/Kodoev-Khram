@@ -1,0 +1,12 @@
+import random
+number = list(range(2,101,2))
+num2=random.sample(number,9)
+num3=random.choice(num2)
+num2.append(num3)
+random.shuffle(num2)
+ind=num2.index(num3)
+ind1=num2.index(num3,ind+1)
+print(number)
+print(num2)
+print(num3)
+print(ind,ind1)
