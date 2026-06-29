@@ -1,4 +1,4 @@
-#AIzaSyCeRsuOrr5iRWgbKtUazQSHj8ky29AHB8A
+
 # 
 # 
 import os
@@ -14,7 +14,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Инициализируем клиента. Ключ подтянется автоматом из переменной окружения, 
 # либо вставь его внутрь genai.Client(api_key="твой_ключ")
-client = genai.Client(api_key="AIzaSyCeRsuOrr5iRWgbKtUazQSHj8ky29AHB8A")
+client = genai.Client(api_key="")
 
 # Создаем ОДНУ сквозную сессию чата с поддержкой памяти
 chat_session = client.chats.create(model="gemini-2.5-flash")
