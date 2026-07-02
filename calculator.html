@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulyator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #1e1e2f;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            width: 280px;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            margin-top: 0;
+        }
+        #display {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 22px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: right;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+        button {
+            padding: 16px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #e0e0e0;
+        }
+        button:active { opacity: 0.8; }
+        .operator { background: #667eea; color: white; }
+        .clear { background: #f56565; color: white; }
+        .equals { background: #48bb78; color: white; }
+        .span-2 { grid-column: span 2; }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Kalkulyator</h1>
+        <input type="text" id="display" value="0" readonly>
+        
+        <div class="buttons">
+            <button class="clear span-2" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="append('/')">/</button>
+            <button class="operator" onclick="append('*')">*</button>
+            
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button class="operator" onclick="append('-')">-</button>
+            
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button class="operator" onclick="append('+')">+</button>
+            
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="append('.')">.</button>
+            
+            <button class="span-2" onclick="append('0')">0</button>
+            <button class="equals span-2" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function append(val) {
+            // Если на экране 0 или ошибка, заменяем текст, иначе — добавляем
+            if (display.value === '0' || display.value === 'Xato!') {
+                display.value = (val === '.' ? '0.' : val);
+            } else {
+                // Защита от повторного ввода точки в одном числе
+                if (val === '.' && display.value.split(/[\+\-\*\/]/).pop().includes('.')) return;
+                display.value += val;
+            }
+        }
+
+        function clearDisplay() {
+            display.value = '0';
+        }
+
+        function calculate() {
+            try {
+                // Вычисляем выражение. Если результат пустой, оставляем 0
+                display.value = eval(display.value) ?? '0';
+            } catch {
+                display.value = 'Xato!';
+            }
+        }
+    </script>
+</body>
+</html>
