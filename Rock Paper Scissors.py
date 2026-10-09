@@ -18,3 +18,6 @@ def play():
         print("\nYou Lose!")
         
 play()
+
+
+#gambling yay

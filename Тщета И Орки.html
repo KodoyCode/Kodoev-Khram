@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Экзистенциальное сообщение Орка-Раба"</title>
+    <title>Тщета и Орки</title>
     <style>
        /* База и Центровка */
         body {
@@ -14,18 +14,18 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Центрирует контейнер по горизонтали */
+            align-items: center; 
             min-height: 100vh;
             line-height: 1.8;
-            overflow-y: auto; /* Разрешаем скролл в бездну */
+            overflow-y: auto; 
          }
 
         /* Контейнер-мавзолей */
         .container {
-            position: relative; /* Чтобы привязать .the-end к низу */
+            position: relative; 
             width: 90%;
             max-width: 650px;
-            margin: 60px 0; /* Отступы сверху и снизу */
+            margin: 60px 0; 
             background: rgba(20, 20, 20, 0.95);
             padding: 50px;
             border: 1px solid #333;
@@ -33,14 +33,13 @@
             box-sizing: border-box;
             text-align: center;
         
-            /* ГИГАНТСКАЯ ПУСТОТА (8 высот экрана) */
-            padding-bottom: 800vh; 
+            /* ГИГАНТСКАЯ ПУСТОТА */
+            padding-bottom: 800vh; 
             
             /* Появление при загрузке */
             animation: fadeInTlen 4s ease-out forwards;
         }
 
-        /* Важные слова */
         strong {
             color: #ff4500;
             font-style: italic;
@@ -54,6 +53,7 @@
             cursor: none; /* Убираем курсор для паники */
             font-weight: 900;
             text-transform: uppercase;
+            transition: all 0.1s ease; /* Для плавного побега текста */
         }
 
         .shake-text:hover {
@@ -61,9 +61,8 @@
             text-shadow: 0 0 15px #ff0000;
         }
 
-        /* Уменьшенный Low Poly Орк */
         img {
-            max-width: 280px; /* Сделали поменьше, как просил */
+            max-width: 280px; 
             height: auto;
             border: 2px solid #222;
             margin: 40px auto;
@@ -77,14 +76,13 @@
             transform: scale(1.05);
         }
 
-        /* Текст в самой-самой бездне */
         .the-end {
             position: absolute;
-            bottom: 100px; /* Прижимаем к самому концу паддинга */
+            bottom: 100px; 
             left: 0;
             right: 0;
             text-align: center;
-            color: #222; /* Почти невидимый в темноте */
+            color: #222; 
             font-size: 0.9em;
             font-style: italic;
             padding: 0 20px;
@@ -92,7 +90,6 @@
             opacity: 0.3;
         }
 
-        /* Проявляется, если юзер реально доскроллил и навел мышь */
         .the-end:hover {
             color: #555;
             opacity: 1;
@@ -110,7 +107,6 @@
             letter-spacing: 12px;
         }
 
-        /* АНИМАЦИИ */
         @keyframes rageShake {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -132,21 +128,21 @@
         <p>
              И никакие возвышенно абстрактные или пошло материальные
              вещи не придадут нашей даже не проклятой, но пустой экзистенции
-             хоть какую-то толику сущностного, настоящего, вечного; время 
+             хоть какую-то толику сущностного, настоящего, вечного; время 
              не оставит и следа ни от чего, и сколького бы мы не добились
              что бы не создали, будто в масштабах отдельной личности, целой
              цивилизации, или всей популяции разумных существ, в конце нас ждёт одно
-             - небытие и забвение; любые вещи превратятся в хлам
-             , никто не вспомнит, кто построил <strong>Кодоев храм</strong>.
+             - небытие и забвение; любые вещи превратятся в хлам,
+             никто не вспомнит, кто построил <strong>Кодоев храм</strong>.
         </p>
 
         <p>
             Да и самого <strong>Кодоя</strong>
-            тоже никто не вспомнит, так что <span class="shake-text">РАБОТАЙ</span>,
+            тоже никто не вспомнит, так что <span class="shake-text" id="runaway-btn">РАБОТАЙ</span>,
             не работай, получай за это <strong>пизды</strong>, не получай, всё едино — <strong>тщета</strong>.
         </p>
 
-        <img src="" alt="Орк-рабочий страдает">
+        <img src="https://i.imgur.com/example-orc.png" alt="Орк-рабочий страдает"> <!-- Замени потом на реальную ссылку -->
 
         <div class="the-end">
             <p>Ты всё-таки дошёл до конца?</p>
@@ -156,6 +152,7 @@
     </div>
 
     <script>
+        // Слежка за вкладкой
         document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
                 document.title = "Э, КУДА?! РАБОТАЙ!";
@@ -163,11 +160,19 @@
                 document.title = "Тщета и Орки";
             }
         });
+
+        // Скрипт «Убегающего слова» — абсолютное тщеславие попыток нажать на кнопку
+        const runawayBtn = document.getElementById('runaway-btn');
+        runawayBtn.addEventListener('mouseover', function() {
+            const x = (Math.random() * 40) - 20; // случайное смещение по X
+            const y = (Math.random() * 20) - 10; // случайное смещение по Y
+            runawayBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+        runawayBtn.addEventListener('mouseleave', function() {
+            // Возвращаем на место, когда мышь ушла
+            setTimeout(() => { runawayBtn.style.transform = 'translate(0, 0)'; }, 500);
+        });
     </script>
 
-</body>
-</html>            <p style="font-size: 10px; margin-top: 30px; letter-spacing: 2px;">© КОДОЕВ ХРАМ. ВСЕ ПРАВА ПОГРЕБЕНЫ.</p>
-        </div>
-    </div>
 </body>
 </html>

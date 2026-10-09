@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Telegram bot token
-TOKEN = "8900440841:AAHF7s73DOmuqMJJTLIMBr7D9hm_1488sf"
+TOKEN = ""
 
 class TelegramBot:
     """Fast Telegram Bot with multiple commands"""
