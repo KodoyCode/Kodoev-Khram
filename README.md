@@ -10,6 +10,10 @@ He was fucking wrong. Now his legacy is a digital shitpost on GitHub powered by 
 
 Welcome to **Kodoev-Khram** and the upcoming legendary **Kodoeva-Igra**.
 
+**Shitinina
+Raxim2011
+Embergenov-Nurmurat** - These contributors are the False Prophets who wandered into the swamp and were consumed by the code. They know not what they have built.
+
 ---
 
 ### 📜 Ancient Kodoy Inscription (Sacred Govnokod):
@@ -24,3 +28,6 @@ Welcome to **Kodoev-Khram** and the upcoming legendary **Kodoeva-Igra**.
         everything is tscheta.
     </p>
     <!-- Div is NOT closed, suka. Deal with it. -->
+
+
+
