@@ -20,4 +20,4 @@
 3. **Browser condition:** Калище.
 
 ---
-*Created by Kodoy. I AM STILL HERE.*
+*Kodoev-Readme. Very Prava Pogrebeni*
