@@ -20,4 +20,4 @@
 3. **Browser condition:** Калище.
 
 ---
-*Kodoev-Readme. Very Prava Pogrebeni*
+*Kodoev-Readme. Vse Prava Pogrebeni*
