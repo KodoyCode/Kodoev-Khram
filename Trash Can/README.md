@@ -15,7 +15,7 @@
 * 🛡️ **Cybersecurity:** `lorem-ipsum.html` — The ultimate firewall protected by *Uvuvwevwevwe Onyetenyevwe Ugwemubwem Osas*.
 
 ### ⚡ System Status:
-1. **Core Database:** Held by `wempt` (Password: `1******`)
+1. **Core Database:** Held by `lox` (Password: `1******`)
 2. **Yan's Debt Status:** UNPAID 🔴
 3. **Browser condition:** Калище.
 
